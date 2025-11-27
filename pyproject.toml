@@ -1,0 +1,76 @@
+[build-system]
+requires = ["scikit-build-core", "nanobind"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "mrhash"
+version = "0.0.1"
+description = ""
+readme = "README.md"
+authors = [
+    { name = "Luca Di Giammarino", email = "digiammarino@diag.uniroma1.it" },
+    { name = "Lorenzo De Rebotti", email = "derebotti@diag.uniroma1.it" },
+]
+keywords = ["LiDAR"]
+requires-python = ">=3.8"
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: Unix",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+]
+dependencies = [
+    "PyYAML",
+    "numpy",
+    "rosbags",
+    "open3d",
+    "matplotlib",
+    "typer>=0.10.0",
+    "natsort",
+    "rich",
+    "setuptools",
+    "opencv-python",
+    "rerun-sdk",
+    "h5py"
+]
+
+[project.scripts]
+mrhash = "mrhash.apps.mrhash:run"
+
+[project.urls]
+Homepage = ""
+
+[tool.scikit-build]
+build-dir = "build/{wheel_tag}"
+cmake.source-dir = "mrhash/"
+cmake.version = ">=3.8"
+wheel.install-dir = "mrhash/src/pybind"
+build.verbose = false
+ninja.version = ">=1.11"
+ninja.make-fallback = false
+
+[tool.pixi.workspace]
+channels = ["nvidia/label/cuda-12.8.0", "conda-forge", "pytorch"]
+platforms = ["linux-64"]
+
+[tool.pixi.system-requirements]
+cuda = "12.8"
+
+[tool.pixi.dependencies]
+cuda               = { version = "*", channel = "nvidia/label/cuda-12.8.0" }
+cuda-nvtx-dev      = { version = "*", channel = "nvidia/label/cuda-12.8.0" }
+glm                = "*"
+python             = ">=3.9,<3.12"
+pip                = "*"
+cmake              = "3.28.*"
+scikit-build-core  = "*"
+pytorch-gpu        = "2.7.*"
+eigen              = "*"
+opencv             = "*"
+gtest              = "*"
+ninja              = ">=1.12.1,<2"
+
+[tool.pixi.pypi-dependencies]
+mrhash = { path = ".", editable = true }

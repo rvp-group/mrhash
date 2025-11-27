@@ -1,0 +1,9 @@
+[submodule "mrhash/third_party/tinyply"]
+	path = mrhash/third_party/tinyply
+	url = git@github.com:lderebotti/tinyply.git
+[submodule "mrhash/third_party/args"]
+	path = mrhash/third_party/args
+	url = git@github.com:Taywee/args.git
+[submodule "mrhash/third_party/json"]
+	path = mrhash/third_party/json
+	url = git@github.com:nlohmann/json.git
