@@ -12,7 +12,7 @@
 </p>
 <h2 align="center"> ACM Transactions on Graphics </h2>
 
-<h3 align="center"><a href="https://arxiv.org/abs/2511.21459">arXiv</a> | <a href="https://dl.acm.org/doi/10.1145/3777909">Paper</a> | <a href="https://rvp-group.github.io/mrhash/">Project Page</a></h3>
+<h3 align="center"><a href="https://arxiv.org/abs/2511.21459">arXiv</a> | <a href="https://dl.acm.org/doi/10.1145/3777909">Paper</a> | <a href="https://rvp-group.github.io/mrhash/">Project Page</a> | <a href="https://huggingface.co/spaces/lorenzo-derebotti/mrhash-live">Live Demo</a></h3>
 
 <p align="center"><b>MrHash</b> is a GPU-accelerated 3D reconstruction pipeline that uses variance-adaptive voxel hashing for efficient TSDF fusion with optional 3D Gaussian Splatting rendering.</p>
 
